@@ -20,7 +20,17 @@
     <FrameLayout
         android:id="@+id/schedule"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/bottomnav"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomnav"
+        style="@style/BottomNav"
+        app:menu="@menu/bottom_navigation_menu"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        />
 
 </RelativeLayout>

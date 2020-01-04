@@ -11,6 +11,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -108,6 +109,22 @@ public class MainActivity extends BaseActivity implements
         Toolbar toolbar = findViewById(R.id.toolbar);
         progressBar = findViewById(R.id.progress);
         setSupportActionBar(toolbar);
+        BottomNavigationView bottomNav = findViewById(R.id.bottomnav);
+
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_calender:
+                        System.out.println("asdf");
+                        break;
+                    case R.id.action_list:
+                        System.out.println("asdf2");
+                        break;
+                }
+                return true;
+            }
+        });
 
         getSupportActionBar().setTitle(R.string.fahrplan);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
